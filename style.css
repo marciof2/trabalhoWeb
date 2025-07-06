@@ -8,6 +8,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/*CORES UTILIZADAS NO SITE*/
 :root {
     --primaria: #1709d8;
     --secundaria: #026fa1;
@@ -74,9 +75,9 @@ body {
 
 /*ESTILO DA IMAGEM PRINCIPAL*/
 .foto-perfil {
-    width: 350px;
-    height: 350px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(48, 172, 189, 0.5) 0px 8px 16px -8px;
+    width: 250px;
+    height: 250px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(48, 172, 189, 0.5) 0px 8px 16px -4px;
     border-radius: 50%;
     border: 4px solid var(--vidro);
 }
@@ -84,7 +85,7 @@ body {
 h1 {
     margin: 10px;
     font-size: 3.5rem;
-    color: var(--primaria);
+    color: var(--claro);
     font-weight: bold;
 }
 
@@ -127,17 +128,22 @@ h1 {
     padding: 50px;
 }
 
-.text-formacao {}
 
 /*ESTILO DOS CARDS DOS PROJETOS*/
+.projetos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 50px;
+}
+
 .projetos {
-    padding: 6rem 2rem;
+    padding: 3rem 1rem;
 }
 
 .projetos-texto {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
     margin: 0 auto;
     text-align: center;
 
@@ -149,22 +155,15 @@ h1 {
     backdrop-filter: blur(16px);
     border: 1px solid var(--vidro);
     overflow: hidden;
+    padding: 10px;
 }
 
 .projetos-imagem {
     width: 30%;
-    height: 300px;
     object-fit: fill;
 }
 
-.projetos-titulo {
-    text-align: center;
-    font-size: 2.5rem;
-    padding: 50px;
-}
-
-.contato {}
-
+/*EDIÇÃO DA PARTE DO FORMULÁRIO PARA CONTATO*/
 .contato-titulo {
     text-align: center;
     font-size: 2.5rem;
@@ -174,7 +173,7 @@ h1 {
 .formulario-contato {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(138, 18, 18, 0.05);
     backdrop-filter: blur(16px);
     padding: 2rem;
     border: 1px solid var(--vidro);
@@ -184,7 +183,8 @@ h1 {
 }
 
 .campo-form {
-    width: 100%;
+    align-self: center;
+    width: 90%;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -194,4 +194,51 @@ h1 {
 
 .grupo-form {
     margin-bottom: 1.5rem;
+}
+
+/*EDIÇÃO DO BOTÃO*/
+
+.botao-submit {
+    background-color: var(--secundaria);
+    width: 200px;
+    height: 50px;
+    color: var(--claro);
+    transition: all 0.5s;
+    position: relative;
+}
+
+.botao-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+}
+
+.botao-submit:hover::before {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+}
+
+.botao-submit::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.2, 1.2);
+}
+
+.botao-submit:hover::after {
+    opacity: 1;
+    transform: scale(1, 1);
 }
